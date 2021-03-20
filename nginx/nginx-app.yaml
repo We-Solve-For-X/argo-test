@@ -6,10 +6,10 @@ spec:
   destination:
     name: ''
     namespace: default
-    server: 'https://kubernetes.default.svc'
+    server: https://kubernetes.default.svc
   source:
     path: ''
-    repoURL: 'https://charts.bitnami.com/bitnami'
+    repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 8.7.1
     chart: nginx
     helm:
