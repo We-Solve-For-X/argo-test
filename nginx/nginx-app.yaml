@@ -1,19 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: k8s-config
+  name: nginxtest
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: argocd
+    namespace: default
     server: https://kubernetes.default.svc
-  project: default
   source:
-    path: k8s-config
-    repoURL: https://github.com/mikesparr/multi-cluster-argo-demo
-    targetRevision: HEAD
+    repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: 8.7.1
+    chart: nginx
+    helm:
+      valueFiles:
+        - values.yaml
+  project: default
   syncPolicy:
     automated:
       selfHeal: true
