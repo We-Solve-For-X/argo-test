@@ -15,7 +15,7 @@ spec:
     chart: nginx
     helm:
       valueFiles:
-        - https://github.com/We-Solve-For-X/argo-test/blob/main/nginx/values.yaml
+        - https://raw.githubusercontent.com/We-Solve-For-X/argo-test/main/nginx/values.yaml
   project: default
   syncPolicy:
     automated:
